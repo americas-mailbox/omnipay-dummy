@@ -14,11 +14,11 @@ class CreditCardRequest extends AbstractRequest
 {
     public function getData()
     {
-        $this->validate('amount', 'card');
+        $this->validate('card');
 
         $this->getCard()->validate();
 
-        return array('amount' => $this->getAmount());
+        return [];
     }
 
     public function sendData($data)
