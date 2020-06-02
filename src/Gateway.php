@@ -80,7 +80,7 @@ class Gateway extends AbstractGateway
 
     public function purchase(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\Dummy\Message\CreditCardRequest', $parameters);
+        return $this->createRequest('\Omnipay\Dummy\Message\PurchaseCardRequest', $parameters);
     }
 
     public function completeAuthorize(array $parameters = array())

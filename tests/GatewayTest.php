@@ -29,11 +29,11 @@ class GatewayTest extends GatewayTestCase
     {
         $options = array(
             'amount' => '10.00',
-            'card' => $this->getValidCard(),
+            'cardReference' => '3783jjdhfj33',
         );
         $request= $this->gateway->purchase($options);
 
-        $this->assertInstanceOf('\Omnipay\Dummy\Message\CreditCardRequest', $request);
+        $this->assertInstanceOf('\Omnipay\Dummy\Message\PurchaseCardRequest', $request);
         $this->assertArrayHasKey('amount', $request->getData());
     }
 
